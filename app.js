@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 require('dotenv').config();
+require('./database');
 const vendasRoutes = require('./routes/vendasRoutes');
 
 const app = express();

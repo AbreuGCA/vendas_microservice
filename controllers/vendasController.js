@@ -3,8 +3,7 @@ const estoqueService = require('../services/estoqueService');
 
 const vendasController = {
     realizarVenda: async (req, res) => {
-        const { produtos } = req.body; // [{ idProduto, quantidade }]
-
+        const { produtos } = req.body;
         const connection = await pool.getConnection();
 
         try {

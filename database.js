@@ -15,13 +15,8 @@ const promisePool = pool.promise();
 // Função para verificar e criar o banco de dados e tabelas
 async function verificarECriarEstrutura() {
     try {
+        console.log('Verificando/criando estrutura do banco...');
         const connection = await promisePool.getConnection();
-
-        // Verificar se o banco de dados existe (use a conexão sem especificar o banco inicialmente)
-        await connection.query(`CREATE DATABASE IF NOT EXISTS ${process.env.MYSQL_DATABASE};`);
-
-        // Selecionar o banco de dados
-        await connection.query(`USE ${process.env.MYSQL_DATABASE};`);
 
         // Criar a tabela `vendas` caso não exista
         await connection.query(`
